@@ -6,15 +6,15 @@ async function main() {
     console.log("Deploying funds contract...");
     const Funds = await ethers.getContractFactory("funds");
     const funds = await Funds.deploy();
-    // await funds.deployed();
+    
 
-    console.log("Funds contract deployed to:", funds.address); // Corrected line
+    console.log("Funds contract deployed to:", funds.address); 
 
     console.log("Depositing funds into the contract...");
-    const depositAmount = ethers.parseEther("1"); // Deposit 1 ether
+    const depositAmount = ethers.parseEther("1"); 
     const depositTx = await funds.deposit({
         value: depositAmount,
-        gasLimit: 300000 // Adjust gas limit as needed
+        gasLimit: 300000 
     });
     await depositTx.wait();
 

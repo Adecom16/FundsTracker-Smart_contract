@@ -7,7 +7,6 @@ describe("Funds Contract", function () {
   beforeEach(async function () {
     const Funds = await ethers.getContractFactory("funds");
     funds = await Funds.deploy();
-    // await funds.deployed();
 
     [owner] = await ethers.getSigners();
   });
